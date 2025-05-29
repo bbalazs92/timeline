@@ -10,4 +10,9 @@ timeline.addEventListener('mousemove', (e) => {
     const timelineRectangle = timeline.getBoundingClientRect();             // getBoundingClientRect() returns a DOMRect object 
     const mouseXPosition = e.clientX - timelineRectangle.left;              // mouse X position relative to timeline
     const timelineWidth = timelineRectangle.width;
+
+    //date calculation
+    const dayIndex = Math.floor((x / timelineWidth) * daysInYear);          // calculate cursor position 0 - 364
+    const currentDate = new Date(startDate);                                
+    currentDate.setDate(currentDate.getDate() + dayIndex);                  //setDate() changes value in place
 });
