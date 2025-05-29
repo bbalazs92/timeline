@@ -2,3 +2,12 @@ body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     padding: 40px;
 }
+
+#timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1460px;
+    height: 20px;
+    background-color: #df5200;
+    margin: 50px auto;
+}
