@@ -11,3 +11,11 @@ body {
     background-color: #df5200;
     margin: 50px auto;
 }
+
+#tooltip {
+    position: absolute;
+    background: black;
+    color: white;
+    padding: 4px 8px;
+    font-size: 14px;
+}
