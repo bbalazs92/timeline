@@ -23,4 +23,7 @@ timeline.addEventListener('mousemove', (e) => {
 
     //tooltip text and postion
     tooltip.innerText = `${year}/${month}/${day}`;
+    tooltip.style.left = `${e.clientX}px`;
+    tooltip.style.top = `${timelineRectangle.top - 30}px`;
+    tooltip.style.display = 'block';
 });
