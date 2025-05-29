@@ -13,9 +13,12 @@ body {
 }
 
 #tooltip {
+    display: none;
     position: absolute;
     background: black;
     color: white;
     padding: 4px 8px;
     font-size: 14px;
+    transform: translateX(-50%);            /*position tooltip to be in the middle compared to mouse pointer*/    
+    pointer-events: none;
 }
