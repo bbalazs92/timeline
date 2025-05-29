@@ -20,4 +20,7 @@ timeline.addEventListener('mousemove', (e) => {
     const year  = String(currentDate.getFullYear()).slice(-2);              // last 2 digits of the year
     const month = String(currentDate.getMonth() + 1).padStart(2, '0');      // months are 0 indexed
     const day   = String(currentDate.getDate()).padStart(2, '0');
+
+    //tooltip text and postion
+    tooltip.innerText = `${year}/${month}/${day}`;
 });
