@@ -10,6 +10,7 @@ body {
     height: 20px;
     background-color: #df5200;
     margin: 50px auto;
+    cursor: pointer;
 }
 
 #tooltip {
