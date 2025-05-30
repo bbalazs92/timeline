@@ -27,3 +27,7 @@ timeline.addEventListener('mousemove', (e) => {
     tooltip.style.top = `${timelineRectangle.top - 30}px`;
     tooltip.style.display = 'block';
 });
+
+timeline.addEventListener('mouseleave', () => {
+    tooltip.style.display = 'none';
+});
