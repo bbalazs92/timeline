@@ -1,3 +1,13 @@
+fetch('./news_articles.json')
+    .then(res => res.json())
+    .then(dataArray => {
+        console.log(`Loaded ${dataArray.length} objects.`);
+        dataArray.forEach(person => {
+            console.log(person.name, person.age);
+        });
+    })
+    .catch(err => console.error('Error loading JSON:', err));
+
 const timeline = document.getElementById('timeline');
 const tooltip  = document.getElementById('tooltip');
 
