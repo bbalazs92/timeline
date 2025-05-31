@@ -5,8 +5,8 @@ fetch('./news_articles.json')
     .then(dataArray => {
         newsArticles = dataArray;
         console.log(`Loaded ${dataArray.length} objects.`);
-        dataArray.forEach(person => {
-            console.log(person.name, person.age);
+        dataArray.forEach(article => {
+            console.log(article.title, article.link, article.date, article.stolen);
         });
     })
     .catch(err => console.error('Error loading JSON:', err));
@@ -71,6 +71,13 @@ timeline.addEventListener('click', (e) => {
 
     const dateAtMousePointerMouseclickEvent = `${year}/${month}/${day}`;
 
-    articles.innerText = dateAtMousePointerMouseclickEvent;
+    // articles.innerText = dateAtMousePointerMouseclickEvent;
     articles.style.height = '50px';
+
+    const matchingItem = newsArticles.find(item => item.date === dateAtMousePointerMouseclickEvent);
+    if (matchingItem) {
+        articles.innerText = matchingItem.title;
+    } else {
+        articles.innerText = 'No relevant articles were found for this day.';
+    }
 });
