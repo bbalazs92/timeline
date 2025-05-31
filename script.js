@@ -31,8 +31,10 @@ timeline.addEventListener('mousemove', (e) => {
     const month = String(currentDate.getMonth() + 1).padStart(2, '0');      // months are 0 indexed
     const day   = String(currentDate.getDate()).padStart(2, '0');
 
+    const dateAtMousePointerMousemoveEvent = `${year}/${month}/${day}`;
+
     //tooltip text and postion
-    tooltip.innerText = `${year}/${month}/${day}`;
+    tooltip.innerText = dateAtMousePointerMousemoveEvent;
     tooltip.style.left = `${e.clientX}px`;
     tooltip.style.top = `${timelineRectangle.top - 30}px`;
     tooltip.style.display = 'block';
@@ -59,6 +61,8 @@ timeline.addEventListener('click', (e) => {
     const month = String(currentDate.getMonth() + 1).padStart(2, '0');      // months are 0 indexed
     const day   = String(currentDate.getDate()).padStart(2, '0');
 
-    articles.innerText = `${year}/${month}/${day}`;
+    const dateAtMousePointerMouseclickEvent = `${year}/${month}/${day}`;
+
+    articles.innerText = dateAtMousePointerMouseclickEvent;
     articles.style.height = '50px';
 });
