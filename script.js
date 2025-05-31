@@ -1,6 +1,9 @@
+let newsArticles = 0;
+
 fetch('./news_articles.json')
     .then(res => res.json())
     .then(dataArray => {
+        newsArticles = dataArray;
         console.log(`Loaded ${dataArray.length} objects.`);
         dataArray.forEach(person => {
             console.log(person.name, person.age);
@@ -45,6 +48,11 @@ timeline.addEventListener('mouseleave', () => {
 });
 
 timeline.addEventListener('click', (e) => {
+
+    if (!newsArticles) {
+        console.warn('Data not loaded yet.');
+        return;
+    };
 
     //mouse position calculation
     const timelineRectangle = timeline.getBoundingClientRect();             // getBoundingClientRect() returns a DOMRect object 
