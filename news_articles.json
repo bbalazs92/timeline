@@ -1,4 +1,7 @@
 [
-    { "name": "test1", "age": 20 },
-    { "name": "test2", "age": 30 }
+    { 
+        "title": "Újabb több százmilliós megrendelést kapott a kormányközeli Balásy Gyula cége a kormánytól",
+        "link": "https://telex.hu/gazdasag/2025/05/27/kulgazdasagi-kulugyminiszterium-rendezvenyek-balasy-gyula-lounge-event",
+        "stolen":  990500000
+    }
 ]
