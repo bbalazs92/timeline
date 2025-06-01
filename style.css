@@ -3,6 +3,14 @@ body {
     padding: 40px;
 }
 
+#years {
+    width: 100%;
+    max-width: 800px;
+    height: 30px;
+    margin: 10px auto;
+    background-color: rebeccapurple;
+}
+
 #timeline {
     position: relative;
     width: 100%;
