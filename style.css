@@ -1,16 +1,16 @@
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     padding: 40px;
-  background: linear-gradient(
-    to right,
-    rgb(255, 179, 186) 0%,    /* Soft Red */
-    rgb(255, 223, 186) 16%,   /* Soft Orange */
-    rgb(255, 255, 186) 32%,   /* Soft Yellow */
-    rgb(186, 255, 201) 48%,   /* Soft Green */
-    rgb(186, 225, 255) 64%,   /* Soft Blue */
-    rgb(204, 186, 255) 80%,   /* Soft Indigo */
-    rgb(255, 186, 255) 100%   /* Soft Violet */
-  );
+    background: linear-gradient(
+        to right,
+        rgb(255, 179, 186) 0%,    /* Soft Red */
+        rgb(255, 223, 186) 16%,   /* Soft Orange */
+        rgb(255, 255, 186) 32%,   /* Soft Yellow */
+        rgb(186, 255, 201) 48%,   /* Soft Green */
+        rgb(186, 225, 255) 64%,   /* Soft Blue */
+        rgb(204, 186, 255) 80%,   /* Soft Indigo */
+        rgb(255, 186, 255) 100%   /* Soft Violet */
+    );
 }
 
 #years {
