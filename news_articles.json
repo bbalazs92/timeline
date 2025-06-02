@@ -3,24 +3,28 @@
         "title": "Újabb több százmilliós megrendelést kapott a kormányközeli Balásy Gyula cége a kormánytól",
         "link": "https://telex.hu/gazdasag/2025/05/27/kulgazdasagi-kulugyminiszterium-rendezvenyek-balasy-gyula-lounge-event",
         "date": "25/05/27",
+        "thief": "Balásy Gyula",
         "stolen":  990500000
     },
     {
         "title": "Minden nyereséget kivettek a Budapest-Belgrád vasútépítő cégből Mészárosék",
         "link": "https://444.hu/2025/05/31/minden-nyereseget-kivettek-a-budapest-belgrad-vasutepito-cegbol-meszarosek",
         "date": "31/05/27",
+        "thief": "Mészáros Lőrinc",
         "stolen":  5000000000
     },
     {
         "title": "9,7 milliárdos osztalékot vettek ki Pintér Sándor egykori, állami megbízásokban bővelkedő őrző-védő cégéből",
         "link": "https://444.hu/2025/05/28/97-milliardos-osztalekot-vettek-ki-pinter-sandor-egykori-allami-megbizasokban-bovelkedo-orzo-vedo-cegebol",
         "date": "28/05/27",
+        "thief": "Pintér Sándor",
         "stolen":  9700000000
     },
     {
         "title": "Szárnyal a 2rule, most először már osztalékot is kivesznek a cégből Mészárosék",
         "link": "https://444.hu/2025/05/30/szarnyal-a-2rule-most-eloszor-mar-osztalekot-is-kivesznek-a-cegbol-meszarosek",
         "date": "30/05/27",
+        "thief": "Mészáros Lőrinc",
         "stolen":  100000000
     }
 ]
