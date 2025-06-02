@@ -1,22 +1,22 @@
 let newsArticles = 0;
 
+const timeline = document.getElementById('timeline');
+const tooltip  = document.getElementById('tooltip');
+const totalStolenAtCurrentYear = document.getElementById('total-stolen-this-year');
+
+const startDate = new Date('2025-01-01');                                   //consider temporal
+const daysInYear = 365;
+
 fetch('./news_articles.json')
     .then(res => res.json())
     .then(dataArray => {
         newsArticles = dataArray;
         console.log(`Loaded ${dataArray.length} objects.`);
         dataArray.forEach(article => {
-            console.log(article.title, article.link, article.date, article.stolen);
+            console.log(article.title, article.link, article.date, article.thief, article.stolen);
         });
     })
     .catch(err => console.error('Error loading JSON:', err));
-
-const timeline = document.getElementById('timeline');
-const tooltip  = document.getElementById('tooltip');
-
-const startDate = new Date('2025-01-01');                                   //rewrite to use temporal!!
-
-const daysInYear = 365;
 
 timeline.addEventListener('mousemove', (e) => {
     //mouse position calculation
@@ -81,3 +81,4 @@ timeline.addEventListener('click', (e) => {
         articles.innerText = 'No relevant articles were found for this day.';
     }
 });
+
