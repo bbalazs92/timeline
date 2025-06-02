@@ -55,3 +55,14 @@ body {
     margin: 50px auto;
     font-size: 14px;
 }
+
+#total-stolen-this-year {
+    position: static;
+    background-color: green;
+    color: black;
+    width: 100%;
+    max-width: 200px;
+    height: 20px;
+    margin: 50px auto;
+    font-size: 12px;
+}
