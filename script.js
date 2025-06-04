@@ -18,6 +18,13 @@ async function loadArticles() {
     };
 };
 
+(async () => {
+    let totalStolen = 0;
+    const data = await loadArticles();
+    data.forEach((element) => totalStolen += element.stolen);
+    totalStolenAtCurrentYear.innerText = totalStolen;
+})();                                                                       // (async () => { ... })(); form is an IIFE - immediately invoked function expression
+
 timeline.addEventListener('mousemove', (e) => {
     //mouse position calculation
     const timelineRectangle = timeline.getBoundingClientRect();             // getBoundingClientRect() returns a DOMRect object 
@@ -75,5 +82,5 @@ timeline.addEventListener('click', (e) => {
         } else {
             articles.innerText = 'No relevant articles were found for this day.';
         }
-    })();                                                                      // (async () => { ... })(); form is an IIFE - immediately invoked function expression
+    })();                                                                      
 });
