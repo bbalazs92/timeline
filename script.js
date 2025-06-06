@@ -1,5 +1,6 @@
 const timeline = document.getElementById('timeline');
 const tooltip  = document.getElementById('tooltip');
+const articles = document.getElementById('articles');
 const totalStolenAtCurrentYear = document.getElementById('total-stolen-this-year');
 
 const startDate = new Date('2025-01-01');                                               //consider temporal
@@ -11,8 +12,8 @@ async function loadArticles() {
         if (!res.ok) {
             throw new Error('Data did not load.');
         };
-        const articles = await res.json();
-        return articles;
+        const loadedArticles = await res.json();
+        return loadedArticles;
     } catch (err) {
         console.error('Fetch error: ', err);
     };
