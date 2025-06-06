@@ -2,7 +2,7 @@ const timeline = document.getElementById('timeline');
 const tooltip  = document.getElementById('tooltip');
 const totalStolenAtCurrentYear = document.getElementById('total-stolen-this-year');
 
-const startDate = new Date('2025-01-01');                                   //consider temporal
+const startDate = new Date('2025-01-01');                                               //consider temporal
 const daysInYear = 365;
 
 async function loadArticles() {
@@ -23,22 +23,22 @@ async function loadArticles() {
     const data = await loadArticles();
     data.forEach((element) => totalStolen += element.stolen);
     totalStolenAtCurrentYear.innerText = totalStolen;
-})();                                                                       // (async () => { ... })(); form is an IIFE - immediately invoked function expression
+})();                                                                                   // (async () => { ... })(); form is an IIFE - immediately invoked function expression
 
 timeline.addEventListener('mousemove', (e) => {
     //mouse position calculation
-    const timelineRectangle = timeline.getBoundingClientRect();             // getBoundingClientRect() returns a DOMRect object 
-    const mouseXPosition    = e.clientX - timelineRectangle.left;           // mouse X position relative to timeline
+    const timelineRectangle = timeline.getBoundingClientRect();                         // getBoundingClientRect() returns a DOMRect object 
+    const mouseXPosition    = e.clientX - timelineRectangle.left;                       // mouse X position relative to timeline
     const timelineWidth     = timelineRectangle.width;
 
     //date calculation
-    const dayIndex    = Math.floor((mouseXPosition / timelineWidth) * daysInYear);       // calculate cursor position 0 - 364
+    const dayIndex    = Math.floor((mouseXPosition / timelineWidth) * daysInYear);      // calculate cursor position 0 - 364
     const currentDate = new Date(startDate);                                
-    currentDate.setDate(currentDate.getDate() + dayIndex);                  // setDate() changes value in place
+    currentDate.setDate(currentDate.getDate() + dayIndex);                              // setDate() changes value in place
 
     //format date
-    const year  = String(currentDate.getFullYear()).slice(-2);              // last 2 digits of the year
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0');      // months are 0 indexed
+    const year  = String(currentDate.getFullYear()).slice(-2);                          // last 2 digits of the year
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');                  // months are 0 indexed
     const day   = String(currentDate.getDate()).padStart(2, '0');
 
     const dateAtMousePointerMousemoveEvent = `${year}/${month}/${day}`;
