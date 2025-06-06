@@ -3,8 +3,8 @@ const tooltip  = document.getElementById('tooltip');
 const articles = document.getElementById('articles');
 const totalStolenAtCurrentYear = document.getElementById('total-stolen-this-year');
 
-const startDate = new Date('2025-01-01');                                               //consider temporal
-const daysInYear = 365;
+const startDate = new Date('2025-01-01');                                               // consider temporal
+const daysInYear = 365;                                                                 // consider leap years
 
 async function loadArticles() {
     try {
@@ -19,10 +19,12 @@ async function loadArticles() {
     };
 };
 
+let cachedArticles = [];
+
 (async () => {
     let totalStolen = 0;
-    const data = await loadArticles();
-    data.forEach((element) => totalStolen += element.stolen);
+    cachedArticles = await loadArticles();
+    cachedArticles.forEach((element) => totalStolen += element.stolen);
     totalStolenAtCurrentYear.innerText = totalStolen;
 })();                                                                                   // (async () => { ... })(); form is an IIFE - immediately invoked function expression
 
@@ -75,13 +77,11 @@ timeline.addEventListener('click', (e) => {
     const dateAtMousePointerMouseclickEvent = `${year}/${month}/${day}`;
 
     articles.style.height = '50px';
-    (async () => {
-        const newsArticles = await loadArticles();
-        const matchingItem = newsArticles.find(item => item.date === dateAtMousePointerMouseclickEvent);
-        if (matchingItem) {
-            articles.innerText = matchingItem.title;
-        } else {
-            articles.innerText = 'No relevant articles were found for this day.';
-        }
-    })();                                                                      
+
+    const matchingItem = cachedArticles.find(item => item.date === dateAtMousePointerMouseclickEvent);
+    if (matchingItem) {
+        articles.innerText = matchingItem.title;
+    } else {
+        articles.innerText = 'No relevant articles were found for this day.';
+    };                                                                   
 });
