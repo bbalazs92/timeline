@@ -13,15 +13,6 @@ body {
     );
 }
 
-#years {
-    width: 100%;
-    max-width: 800px;
-    height: 30px;
-    margin: 10px auto;
-    font-size: 14px;
-    background-color: rgb(224, 138, 224);
-}
-
 #timeline {
     position: relative;
     width: 100%;
