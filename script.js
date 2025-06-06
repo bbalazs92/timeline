@@ -59,6 +59,7 @@ timeline.addEventListener('mouseleave', () => {
 
 timeline.addEventListener('click', (e) => {
 
+    articles.innerText = "";
     //mouse position calculation
     const timelineRectangle = timeline.getBoundingClientRect();             
     const mouseXPosition    = e.clientX - timelineRectangle.left;           
@@ -80,7 +81,12 @@ timeline.addEventListener('click', (e) => {
 
     const matchingItem = cachedArticles.find(item => item.date === dateAtMousePointerMouseclickEvent);
     if (matchingItem) {
-        articles.innerText = matchingItem.title;
+        let articleWithLink = document.createElement("a");
+        articles.appendChild(articleWithLink);
+        articleWithLink.setAttribute("href", `${matchingItem.link}`);
+        articleWithLink.setAttribute("target", "_blank");
+        articleWithLink.setAttribute("rel", "noopener noreferrer");
+        articleWithLink.innerText = matchingItem.title;
     } else {
         articles.innerText = 'No relevant articles were found for this day.';
     };                                                                   
