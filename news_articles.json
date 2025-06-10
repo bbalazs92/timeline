@@ -30,5 +30,13 @@
         "thief": "Mészáros Lőrinc",
         "stolen":  100000000,
         "category": "corruption"
+    },
+    {
+        "title": "Belga ügyészség: az ereszcsatornán keresztül, vérző kézzel menekült Szájer, akinél drogot találtak",
+        "link": "https://24.hu/kulfold/2020/12/01/belga-ugyeszseg-az-ereszcsatornan-keresztul-verzo-kezzel-menekult-szajer-akinel-drogot-talaltak/",
+        "date": "20/12/01",
+        "thief": "Szájer József",
+        "stolen":  0,
+        "category": "scandal"
     }
 ]
