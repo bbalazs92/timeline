@@ -53,3 +53,7 @@ body {
     margin: 50px auto;
     font-size: 12px;
 }
+
+.articleListItem {
+    margin: 10px;
+}
