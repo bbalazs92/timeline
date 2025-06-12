@@ -24,10 +24,17 @@ let cachedArticles = [];
 (async () => {
     cachedArticles = await loadArticles();
     cachedArticles.forEach((element) => {
-        let currentArticle = document.createElement("div");
-        articles.appendChild(currentArticle);
-        currentArticle.innerText = element.title;
-        //articleWithLink.innerText = matchingItem.title;
+        let currentArticleDiv = document.createElement("div");
+        currentArticleDiv.className = "articleListItem";
+        articles.appendChild(currentArticleDiv);
+
+        let currentArticleLink = document.createElement("a");
+        currentArticleDiv.appendChild(currentArticleLink);
+        currentArticleLink.setAttribute("href", element.link);
+        currentArticleLink.setAttribute("target", "_blank");
+        currentArticleLink.setAttribute("rel", "noopener noreferrer");
+        currentArticleLink.innerText = element.title;
+
     });
 })();                                                                                   // (async () => { ... })(); form is an IIFE - immediately invoked function expression
 
