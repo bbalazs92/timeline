@@ -22,10 +22,13 @@ async function loadArticles() {
 let cachedArticles = [];
 
 (async () => {
-    let totalStolen = 0;
     cachedArticles = await loadArticles();
-    cachedArticles.forEach((element) => totalStolen += element.stolen);
-    totalStolenAtCurrentYear.innerText = totalStolen;
+    cachedArticles.forEach((element) => {
+        let currentArticle = document.createElement("div");
+        articles.appendChild(currentArticle);
+        currentArticle.innerText = element.title;
+        //articleWithLink.innerText = matchingItem.title;
+    });
 })();                                                                                   // (async () => { ... })(); form is an IIFE - immediately invoked function expression
 
 timeline.addEventListener('mousemove', (e) => {
@@ -91,3 +94,11 @@ timeline.addEventListener('click', (e) => {
         articles.innerText = 'No relevant articles were found for this day.';
     };                                                                   
 });
+
+/*
+(async () => {
+    let totalStolen = 0;
+    cachedArticles = await loadArticles();
+    cachedArticles.forEach((element) => totalStolen += element.stolen);
+    totalStolenAtCurrentYear.innerText = totalStolen;
+})();                                                                                   // (async () => { ... })(); form is an IIFE - immediately invoked function expression */
