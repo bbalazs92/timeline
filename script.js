@@ -6,6 +6,12 @@ const currentDay = document.getElementById('current-day');
 const startDate = new Date('2025-01-01');                                               // consider temporal
 const daysInYear = 365;                                                                 // consider leap years
 
+function removeChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    };
+};
+
 async function loadArticles() {
     try {
         const res = await fetch('./news_articles.json');
@@ -70,7 +76,6 @@ timeline.addEventListener('mouseleave', () => {
 
 timeline.addEventListener('click', (e) => {
 
-    currentDay.innerText = "";
     //mouse position calculation
     const timelineRectangle = timeline.getBoundingClientRect();             
     const mouseXPosition    = e.clientX - timelineRectangle.left;           
@@ -87,24 +92,23 @@ timeline.addEventListener('click', (e) => {
     const day   = String(currentDate.getDate()).padStart(2, '0');
 
     const dateAtMousePointerMouseclickEvent = `${year}/${month}/${day}`;
-
     const matchingItem = cachedArticles.find(item => item.date === dateAtMousePointerMouseclickEvent);
+
     if (matchingItem) {
+        removeChildren(currentDay);
+        let currentDayDate = document.createElement("p");
         let articleWithLink = document.createElement("a");
+        currentDay.appendChild(currentDayDate);
         currentDay.appendChild(articleWithLink);
+        currentDayDate.insertAdjacentText("beforeend", `Ez tortent ezen a napon: ${year}/${month}/${day}`);             // innerText and textContent remove child nodes using this instead
         articleWithLink.setAttribute("href", `${matchingItem.link}`);
         articleWithLink.setAttribute("target", "_blank");
         articleWithLink.setAttribute("rel", "noopener noreferrer");
         articleWithLink.innerText = matchingItem.title;
     } else {
-        currentDay.innerText = 'No relevant articles were found for this day.';
+        removeChildren(currentDay);
+        let noArticles = document.createElement("div");
+        currentDay.appendChild(noArticles);
+        noArticles.innerText = 'No relevant articles were found for this day.';
     };                                                                   
 });
-
-/*
-(async () => {
-    let totalStolen = 0;
-    cachedArticles = await loadArticles();
-    cachedArticles.forEach((element) => totalStolen += element.stolen);
-    totalStolenAtCurrentYear.innerText = totalStolen;
-})();                                                                                   // (async () => { ... })(); form is an IIFE - immediately invoked function expression */
