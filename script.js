@@ -1,7 +1,7 @@
 const timeline = document.getElementById('timeline');
 const tooltip  = document.getElementById('tooltip');
 const articles = document.getElementById('articles');
-const totalStolenAtCurrentYear = document.getElementById('total-stolen-this-year');
+const currentDay = document.getElementById('current-day');
 
 const startDate = new Date('2025-01-01');                                               // consider temporal
 const daysInYear = 365;                                                                 // consider leap years
@@ -21,6 +21,7 @@ async function loadArticles() {
 
 let cachedArticles = [];
 
+// load all articles into articles div when the page loads
 (async () => {
     cachedArticles = await loadArticles();
     cachedArticles.forEach((element) => {
@@ -69,7 +70,7 @@ timeline.addEventListener('mouseleave', () => {
 
 timeline.addEventListener('click', (e) => {
 
-    articles.innerText = "";
+    currentDay.innerText = "";
     //mouse position calculation
     const timelineRectangle = timeline.getBoundingClientRect();             
     const mouseXPosition    = e.clientX - timelineRectangle.left;           
@@ -87,18 +88,16 @@ timeline.addEventListener('click', (e) => {
 
     const dateAtMousePointerMouseclickEvent = `${year}/${month}/${day}`;
 
-    articles.style.height = '50px';
-
     const matchingItem = cachedArticles.find(item => item.date === dateAtMousePointerMouseclickEvent);
     if (matchingItem) {
         let articleWithLink = document.createElement("a");
-        articles.appendChild(articleWithLink);
+        currentDay.appendChild(articleWithLink);
         articleWithLink.setAttribute("href", `${matchingItem.link}`);
         articleWithLink.setAttribute("target", "_blank");
         articleWithLink.setAttribute("rel", "noopener noreferrer");
         articleWithLink.innerText = matchingItem.title;
     } else {
-        articles.innerText = 'No relevant articles were found for this day.';
+        currentDay.innerText = 'No relevant articles were found for this day.';
     };                                                                   
 });
 

@@ -45,9 +45,9 @@ body {
     font-size: 14px;
 }
 
-#total-stolen-this-year {
+#current-day {
     position: static;
-    background-color: green;
+    background-color: lightgray;
     color: black;
     height: 20px;
     margin: 50px auto;
