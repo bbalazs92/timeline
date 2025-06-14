@@ -37,6 +37,8 @@ function createButtons() {
             removeActiveButtonClass(buttonRow2);
             e.target.classList.add("active-button");
             activeYear = e.target.innerText;
+            removeChildren(articles);
+            loadArticleContent();
         });
         if (i <= 2015) {                                                                 
             buttonRow1.appendChild(button);                                              
@@ -63,8 +65,10 @@ async function loadArticles() {
 createButtons();
 
 // load all articles into articles div when the page loads
-(async () => {
-    cachedArticles = await loadArticles();
+// LEARNING POINT: (async () => { ... })(); form is an IIFE - immediately invoked function expression
+
+async function loadArticleContent() {
+cachedArticles = await loadArticles();
     // store selected year
     const matchingYear = activeYear.toString().slice(2);
     // only keep articles written in active year      
@@ -82,7 +86,9 @@ createButtons();
         currentArticleLink.setAttribute("rel", "noopener noreferrer");
         currentArticleLink.innerText = element.title;
     });
-})();                                                                                   // (async () => { ... })(); form is an IIFE - immediately invoked function expression
+};     
+
+loadArticleContent();
 
 timeline.addEventListener('mousemove', (e) => {
     //mouse position calculation
