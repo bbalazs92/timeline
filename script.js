@@ -1,13 +1,13 @@
-const timeline = document.getElementById('timeline');
-const tooltip  = document.getElementById('tooltip');
-const articles = document.getElementById('articles');
+const timeline   = document.getElementById('timeline');
+const tooltip    = document.getElementById('tooltip');
+const articles   = document.getElementById('articles');
 const currentDay = document.getElementById('current-day');
 const buttonRow1 = document.getElementById('button-row-1');
 const buttonRow2 = document.getElementById('button-row-2');
 
-const startDate = new Date('2025-01-01');                                               // consider temporal
+const startDate  = new Date('2025-01-01');                                               // consider temporal
 const daysInYear = 365;                                                                 // consider leap years
-let activeYear = 2025;
+let activeYear   = 2025;
 let cachedArticles = [];
 
 function removeChildren(element) {
@@ -16,11 +16,16 @@ function removeChildren(element) {
     };
 };
 
+function removeActiveButtonClass(element) {
+    for (let child of element.children) {
+        if (child.classList.contains("active-button")) { child.classList.remove("active-button") };
+    };
+};
+
 // LEARNING POINT: when JS inserts elements using appendChild()
 // no whitespace is added, making buttons appear right next
 // to each other. Hand-written HTML adds whitespace by default.
 // This is why me-1 Bootstrap class is added.
-
 function createButtons() {
     for (let i = 1998; i <= 2026; i++) {
         const button = document.createElement("button");
@@ -28,6 +33,8 @@ function createButtons() {
         button.className = "btn btn-primary me-1";                                      
         button.insertAdjacentText("beforeend", i);                                      
         button.addEventListener("click", (e) => {
+            removeActiveButtonClass(buttonRow1);
+            removeActiveButtonClass(buttonRow2);
             e.target.classList.add("active-button");
         });
         if (i <= 2015) {                                                                 
