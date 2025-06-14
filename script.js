@@ -5,6 +5,7 @@ const currentDay = document.getElementById('current-day');
 
 const startDate = new Date('2025-01-01');                                               // consider temporal
 const daysInYear = 365;                                                                 // consider leap years
+let activeYear = 2025;
 
 function removeChildren(element) {
     while (element.firstChild) {
