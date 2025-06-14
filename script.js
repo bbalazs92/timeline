@@ -16,14 +16,22 @@ function removeChildren(element) {
     };
 };
 
+// LEARNING POINT: when JS inserts elements using appendChild()
+// no whitespace is added, making buttons appear right next
+// to each other. Hand-written HTML adds whitespace by default.
+// This is why me-1 Bootstrap class is added.
+
 function createButtons() {
     for (let i = 1998; i <= 2026; i++) {
         const button = document.createElement("button");
         button.setAttribute("type", "button");
-        button.className = "btn btn-primary me-1";
-        button.insertAdjacentText("beforeend", i);
-        if (i <= 2015) {
-            buttonRow1.appendChild(button);
+        button.className = "btn btn-primary me-1";                                      
+        button.insertAdjacentText("beforeend", i);                                      
+        button.addEventListener("click", (e) => {
+            e.target.classList.add("active-button");
+        });
+        if (i <= 2015) {                                                                 
+            buttonRow1.appendChild(button);                                              
         } else {
             buttonRow2.appendChild(button);
         };
