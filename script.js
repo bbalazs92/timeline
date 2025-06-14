@@ -2,14 +2,32 @@ const timeline = document.getElementById('timeline');
 const tooltip  = document.getElementById('tooltip');
 const articles = document.getElementById('articles');
 const currentDay = document.getElementById('current-day');
+const buttonRow1 = document.getElementById('button-row-1');
+const buttonRow2 = document.getElementById('button-row-2');
 
 const startDate = new Date('2025-01-01');                                               // consider temporal
 const daysInYear = 365;                                                                 // consider leap years
 let activeYear = 2025;
+let cachedArticles = [];
 
 function removeChildren(element) {
     while (element.firstChild) {
         element.removeChild(element.firstChild);
+    };
+};
+
+function createButtons() {
+    for (let i = 1998; i <= 2026; i++) {
+        const button = document.createElement("button");
+        button.className = "btn btn-primary";
+        button.setAttribute("type", "button");
+        button.insertAdjacentText("beforeend", i);
+        if (i <= 2015) {
+            buttonRow1.appendChild(button);
+        } else {
+            buttonRow2.appendChild(button);
+        };
+        if (i === 2002) { i = 2009 };
     };
 };
 
@@ -26,7 +44,7 @@ async function loadArticles() {
     };
 };
 
-let cachedArticles = [];
+createButtons();
 
 // load all articles into articles div when the page loads
 (async () => {
