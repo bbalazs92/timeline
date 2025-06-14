@@ -57,3 +57,7 @@ body {
 .articleListItem {
     margin: 10px;
 }
+
+.active-button {
+    background-color: #df5200 !important;
+}
