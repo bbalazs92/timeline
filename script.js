@@ -19,8 +19,8 @@ function removeChildren(element) {
 function createButtons() {
     for (let i = 1998; i <= 2026; i++) {
         const button = document.createElement("button");
-        button.className = "btn btn-primary";
         button.setAttribute("type", "button");
+        button.className = "btn btn-primary";
         button.insertAdjacentText("beforeend", i);
         if (i <= 2015) {
             buttonRow1.appendChild(button);
