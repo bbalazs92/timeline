@@ -31,18 +31,22 @@ let cachedArticles = [];
 // load all articles into articles div when the page loads
 (async () => {
     cachedArticles = await loadArticles();
-    cachedArticles.forEach((element) => {
+    // store selected year
+    const matchingYear = activeYear.toString().slice(2);
+    // only keep articles written in active year      
+    const matchingYearArticles = cachedArticles.filter(element => element.date.slice(0, 2) === matchingYear);       
+    // display relevant articles
+    matchingYearArticles.forEach((element) => {
         let currentArticleDiv = document.createElement("div");
         currentArticleDiv.className = "articleListItem";
         articles.appendChild(currentArticleDiv);
-
+        // add links to articles
         let currentArticleLink = document.createElement("a");
         currentArticleDiv.appendChild(currentArticleLink);
         currentArticleLink.setAttribute("href", element.link);
         currentArticleLink.setAttribute("target", "_blank");
         currentArticleLink.setAttribute("rel", "noopener noreferrer");
         currentArticleLink.innerText = element.title;
-
     });
 })();                                                                                   // (async () => { ... })(); form is an IIFE - immediately invoked function expression
 
