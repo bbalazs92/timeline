@@ -36,6 +36,7 @@ function createButtons() {
             removeActiveButtonClass(buttonRow1);
             removeActiveButtonClass(buttonRow2);
             e.target.classList.add("active-button");
+            activeYear = e.target.innerText;
         });
         if (i <= 2015) {                                                                 
             buttonRow1.appendChild(button);                                              
