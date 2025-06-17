@@ -46,5 +46,38 @@
         "thief": "Orbán Viktor",
         "stolen":  0,
         "category": "scandal"
+    },
+    {
+        "title": "Ilyen mellbőséggel kételkedek benne, hogy valaki kiskorú",
+        "link": "https://444.hu/2024/02/23/ilyen-mellboseggel-ketelkedek-benne-hogy-valaki-kiskoru",
+        "date": "24/02/23",
+        "thief": "Pócs János",
+        "stolen":  0,
+        "category": "scandal"
+    },
+    {
+        "title": "Előkerült egy videó, amin a fideszes Pócs János a kazánba zárja egy roma alkalmazottját",
+        "link": "https://444.hu/2019/03/23/elokerult-egy-video-amin-a-fideszes-pocs-janos-a-kazanba-zarja-egy-roma-alkalmazottjat",
+        "date": "19/03/23",
+        "thief": "Pócs János",
+        "stolen":  0,
+        "category": "scandal"
+    },
+    {
+        "title": "Miért kerül le a napirendről a határon túli magyar iskolák bevonása a Sulinet programba?",
+        "link": "https://www.parlament.hu/web/guest/iromanyok-elozo-ciklusbeli-adatai?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=72caqRtc&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D36%26p_izon%3D1301",
+        "date": "99/05/26",
+        "thief": "Orbán Viktor",
+        "stolen":  0,
+        "category": "scandal"
+    },
+    {
+        "title": "Luxusjobboldal? Rogánék legalább 1,9 millióért nyaraltak?",
+        "link": "https://fideszfigyelo.blog.hu/2012/07/23/roganek_legalabb_1_9_millioert_nyaraltak",
+        "date": "12/07/23",
+        "thief": "Rogán Antal",
+        "stolen":  0,
+        "category": "scandal"
     }
+    
 ]
