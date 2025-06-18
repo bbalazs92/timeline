@@ -78,6 +78,21 @@
         "thief": "Rogán Antal",
         "stolen":  0,
         "category": "scandal"
+    },
+    {
+        "title": "A győri fideszes polgármester ügyvédje kapta meg a miskolci kaszinót",
+        "link": "https://24.hu/belfold/2019/07/23/a-gyori-fideszes-polgarmester-ugyvedje-kapta-meg-a-miskolci-kaszinot/",
+        "date": "19/07/23",
+        "thief": "Rákosfalvy Zoltán",
+        "stolen":  0,
+        "category": "scandal"
+    },
+    {
+        "title": "Szex közben készült kép a jachton, amin Borkai Zsolt nőket ölelgetett",
+        "link": "https://24.hu/kozelet/2019/10/05/borkai-zsolt-jacht-intim/",
+        "date": "19/10/05",
+        "thief": "Borkai Zsolt",
+        "stolen":  0,
+        "category": "scandal"
     }
-    
 ]
