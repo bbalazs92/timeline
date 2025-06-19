@@ -5,7 +5,7 @@ const currentDay = document.getElementById('current-day');
 const buttonRow1 = document.getElementById('button-row-1');
 const buttonRow2 = document.getElementById('button-row-2');
 
-const startDate  = new Date('2025-01-01');                                               // consider temporal
+//const startDate  = new Date('2025-01-01');                                               // consider temporal
 const daysInYear = 365;                                                                 // consider leap years
 let activeYear   = 2025;
 let cachedArticles = [];
@@ -98,7 +98,7 @@ timeline.addEventListener('mousemove', (e) => {
 
     //date calculation
     const dayIndex    = Math.floor((mouseXPosition / timelineWidth) * daysInYear);      // calculate cursor position 0 - 364
-    const currentDate = new Date(startDate);                                
+    const currentDate = new Date(activeYear.toString().concat('-01-01'));                                
     currentDate.setDate(currentDate.getDate() + dayIndex);                              // setDate() changes value in place
 
     //format date
@@ -128,7 +128,7 @@ timeline.addEventListener('click', (e) => {
 
     //date calculation
     const dayIndex    = Math.floor((mouseXPosition / timelineWidth) * daysInYear);       
-    const currentDate = new Date(startDate);                                
+    const currentDate = new Date(activeYear.toString().concat('-01-01'));                                
     currentDate.setDate(currentDate.getDate() + dayIndex);                  
 
     //format date
